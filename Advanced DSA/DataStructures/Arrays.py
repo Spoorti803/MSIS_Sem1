@@ -45,10 +45,10 @@ class arrays:
             print(f"The value of element at {i} = {self.array[i]}")
 
 
-def getInput(promt):
+def getInput(prompt):
     while True:
         try:
-            return int(input(promt))
+            return int(input(prompt))
         except ValueError:
             print("Please enter a valid number")
 def main():
