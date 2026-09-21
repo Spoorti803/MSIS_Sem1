@@ -1,20 +1,20 @@
 from builtins import Exception
 import os
 import numpy as np
-from gensim.models import KeyedVectors
+from gensim.models import api
 
 """
 Uasing word2vec model to illustrate linear algebra operations
 on word vectors, such as computing similarity and inner products.
 """
-
-def load_model(word2vec_model_path:str) -> KeyedVectors:
-    try:
-        fast_model_path = os.path.expanduser(word2vec_model_path)
-        return KeyedVectors.load(fast_model_path, mmap='r')
-    except Exception as e:
-        print(f"Failed to load model in word2vec format: {e}")
-    return None
+model = api.load("glove-wiki-gigaword-50")
+# def load_model(word2vec_model_path:str) -> KeyedVectors:
+#     try:
+#         fast_model_path = os.path.expanduser(word2vec_model_path)
+#         return KeyedVectors.load(fast_model_path, mmap='r')
+#     except Exception as e:
+#         print(f"Failed to load model in word2vec format: {e}")
+#     return None
 
 
 def get_word_vector(model, word:str):
@@ -96,7 +96,7 @@ def test_most_similar(model, word:str):
 
 
 if __name__ == "__main__":
-    word2vec_model_path = r"G:\MSIS_LabWork\Applied Linear Algebra\glove50\glove_50_fast.wordvectors"
+    word2vec_model_path = r"G:\Masters\MSIS_LabWork_clean\Applied Linear Algebra\LabWork\glove_50_fast.wordvectors"
     model = load_model(word2vec_model_path)
     assert model is not None, "Model loading failed."
     test_similarity_diff_words(model)
