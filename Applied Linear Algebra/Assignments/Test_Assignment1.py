@@ -1,7 +1,7 @@
 import math
 import random
 import unittest
-from vectors import Vec  
+from Assignment1 import Vec  
 
 class TestMean(unittest.TestCase):
     def test_known_value(self):
