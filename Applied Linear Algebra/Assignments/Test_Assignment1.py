@@ -1,9 +1,7 @@
 import math
 import random
 import unittest
-#import the vec class from the file vectors.py
 from vectors import Vec  
-
 
 class TestMean(unittest.TestCase):
     def test_known_value(self):
@@ -104,7 +102,6 @@ class TestDemean(unittest.TestCase):
 
 class TestStd(unittest.TestCase):
     def test_known_value(self):
-        # classic example: population std is exactly 2
         self.assertAlmostEqual(Vec([2, 4, 4, 4, 5, 5, 7, 9]).std(), 2.0)
 
     def test_matches_definition(self):
